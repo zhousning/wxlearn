@@ -41,7 +41,7 @@ Page({
                 var iconList = [];
                 for (var i = 0; i < objs.length; i++) {
                     iconList.push({
-                        url: '/pages/todos/qes_list/qes_list?qes_lib=' + objs[i].name,
+                        url: '/pages/todos/qes_list/qes_list?learn_ctg_id=' + learn_ctg + '&qes_lib=' + objs[i].name,
                         icon: app.globalData.IconList[i],
                         color: app.globalData.colors[i],
                         badge: 1,

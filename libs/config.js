@@ -17,6 +17,7 @@ var configs = {
     learn_ctg_qes_bank: 'http://192.168.100.115:3000/wx_learnctgs/qes_bank',
     qes_bank_all: 'http://192.168.100.115:3000/wx_qesbanks/query_all',
     qes_bank_lib_all: 'http://192.168.100.115:3000/wx_qesbanks/query_lib_all',
+    advise_create: 'http://192.168.100.115:3000/advises/create_advise',
   },
   getNetwork() {
     return new Promise((resolve, reject) => {

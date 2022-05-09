@@ -185,7 +185,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    var openid = wx.getStorageSync('openid');
+    var openid = wx.getStorageSync('openId');
     var qes_lib = options.qes_lib;
     var type = options.type
 
@@ -193,11 +193,7 @@ Page({
       title: '数据加载中',
     })
     wx.request({
-      url: app.globalData.setting.routes.host + '/qes_banks/' + qes_lib + '/' + type + '/query_all',
-      header: {
-        'Accept': "*/*",
-        'content-type': 'application/json' // 默认值
-      },
+      url: app.globalData.config.routes.host + '/qes_banks/' + qes_lib + '/' + type + '/query_all',
       data: {
         openid: openid
       },
@@ -234,15 +230,11 @@ Page({
       })
       text = '题目：' + questions[current].title + '【问题】' + text
       wx.request({
-        url: app.globalData.setting.routes.host + '/advises/create_advise',
+        url: app.globalData.config.routes.advise_create,
         method: 'post',
         data: {
           text: text,
           openid: openid
-        },
-        header: {
-          'Accept': "*/*",
-          'content-type': 'application/json' // 默认值
         },
         success: function (res) {
           var status = res.data.status

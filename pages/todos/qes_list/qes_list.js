@@ -23,12 +23,14 @@ Page({
         })
         var that = this;
         var qes_lib = options.qes_lib
+        var learn_ctg_id = options.learn_ctg_id
         var openid = wx.getStorageSync('openId');
 
         wx.request({
             url: app.globalData.config.routes.qes_bank_lib_all,
             data: {
                 openid: openid,
+                learn_ctg_id: learn_ctg_id,
                 qes_lib_name: qes_lib
             },
             success: function (res) {
