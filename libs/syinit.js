@@ -45,6 +45,33 @@ var init = {
             }
         })
     },
+    lawctgs: function (that) {
+        var openid = wx.getStorageSync('openId');
+        wx.request({
+            url: config.routes.law_ctg_all,
+            data: {
+                openid: openid
+            },
+            success: function (res) {
+                var objs = res.data;
+                var iconList = [];
+                for (var i = 0; i < objs.length; i++) {
+                    iconList.push({
+                        url: '/pages/laws/qes_first/qes_first?law_ctg=' + objs[i].id,
+                        icon: app.globalData.IconList[i],
+                        color: app.globalData.colors[i],
+                        badge: 1,
+                        name: objs[i].name + '',
+                    })
+                }
+                that.setData({
+                    lawList: iconList
+                })
+            },
+            fail: function () {
+            }
+        })
+    },
     qes_banks: function (that) {
         var openid = wx.getStorageSync('openId');
         wx.request({

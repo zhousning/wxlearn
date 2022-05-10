@@ -28,17 +28,16 @@ Component({
             url: 'https://636c-cloud1-6gqvn1deb6d48dd5-1309064836.tcb.qcloud.la/swiper0005.png?sign=a6acf97e2e52dd236fcec81b689cfa6b&t=1642578963'
         }],
         iconList: [],
+        lawList: [],
         gridCol: 4
     },
     lifetimes: {
         attached: function () {
-            wx.showLoading({
-               title: '数据加载中',
-            })
             var that = this;
             init.notice(that);
             //init.qes_banks(that);
             init.learnctgs(that);
+            init.lawctgs(that);
         },
 
     },
