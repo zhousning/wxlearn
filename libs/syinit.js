@@ -6,6 +6,10 @@ var init = {
         wx.request({
             //url: config.routes.notice_query_latest,
             url: config.routes.notice_query_latest,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             success: function (res) {
                 var data = res.data
                 if (data.id) {
@@ -22,6 +26,10 @@ var init = {
         var openid = wx.getStorageSync('openId');
         wx.request({
             url: config.routes.learn_ctg_all,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 openid: openid
             },
@@ -41,14 +49,17 @@ var init = {
                     iconList: iconList
                 })
             },
-            fail: function () {
-            }
+            fail: function () {}
         })
     },
     lawctgs: function (that) {
         var openid = wx.getStorageSync('openId');
         wx.request({
             url: config.routes.law_ctg_all,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 openid: openid
             },
@@ -68,14 +79,17 @@ var init = {
                     lawList: iconList
                 })
             },
-            fail: function () {
-            }
+            fail: function () {}
         })
     },
     qes_banks: function (that) {
         var openid = wx.getStorageSync('openId');
         wx.request({
             url: config.routes.host + '/qes_banks/query_all',
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 openid: openid
             },
@@ -93,7 +107,7 @@ var init = {
                     })
                 }
                 //that.setData({
-                 //   iconList: iconList
+                //   iconList: iconList
                 //})
                 wx.hideLoading();
             },

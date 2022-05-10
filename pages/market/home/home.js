@@ -17,15 +17,9 @@ Component({
       })
       var that = this;
       var openid = wx.getStorageSync('openid');
-      if (!openid) {
-        wx.redirectTo({
-          url: '/pages/login/login'
-        })
-        return;
-      }
       
       wx.request({
-        url: app.globalData.setting.routes.host + '/essays/query_all',
+        url: app.globalData.config.routes.host + '/essays/query_all',
         header: {
           'Accept': "*/*",
           'content-type': 'application/json' // 默认值

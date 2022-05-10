@@ -116,3 +116,16 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.qes-ctn-header {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+.qes-ctn-list {
+    margin-top: -50rpx;
+    margin-left: 0rpx !important;
+    margin-right: 0rpx !important;
+    border-top-left-radius: 50rpx  !important;
+    border-top-right-radius: 50rpx  !important;
+}

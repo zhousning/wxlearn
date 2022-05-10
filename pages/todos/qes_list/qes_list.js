@@ -8,7 +8,7 @@ Page({
     data: {
         StatusBar: app.globalData.StatusBar,
         CustomBar: app.globalData.CustomBar,
-        gridCol:2,
+        gridCol: 2,
         skin: false,
         header_title: '',
         cardCur: 0,
@@ -28,6 +28,10 @@ Page({
 
         wx.request({
             url: app.globalData.config.routes.qes_bank_lib_all,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 openid: openid,
                 learn_ctg_id: learn_ctg_id,

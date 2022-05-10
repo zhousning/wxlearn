@@ -12,7 +12,7 @@ Page({
     data: {
         StatusBar: app.globalData.StatusBar,
         CustomBar: app.globalData.CustomBar,
-        gridCol:2,
+        gridCol: 2,
         skin: false,
         cardCur: 0,
         header_title: '',
@@ -31,6 +31,10 @@ Page({
 
         wx.request({
             url: app.globalData.config.routes.learn_ctg_qes_bank,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 learn_ctg_id: learn_ctg,
                 openid: openid
@@ -59,6 +63,5 @@ Page({
             }
         })
     },
-    onShow: function () {
-    },
+    onShow: function () {},
 })

@@ -31,6 +31,10 @@ Page({
 
         wx.request({
             url: app.globalData.config.routes.law_ctg_qes_bank,
+            header: {
+                'Accept': "*/*",
+                'content-type': 'application/json' // 默认值
+            },
             data: {
                 law_ctg_id: law_ctg,
                 openid: openid
