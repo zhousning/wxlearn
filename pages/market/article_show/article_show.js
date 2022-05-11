@@ -19,19 +19,15 @@ Page({
         var that = this;
         var openid = wx.getStorageSync('openId');
         var article_id = options.article_id
-        if (!openid) {
-            wx.redirectTo({
-                url: '/pages/login/login'
-            })
-            return;
-        }
+
         wx.request({
-            url: app.globalData.setting.routes.host + '/essays/' + article_id + '/query_show',
+            url: app.globalData.config.routes.essay_show,
             header: {
                 'Accept': "*/*",
                 'content-type': 'application/json' // 默认值
             },
             data: {
+                id: article_id,
                 openid: openid
             },
             success: function (res) {

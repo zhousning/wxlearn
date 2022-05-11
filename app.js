@@ -1,4 +1,3 @@
-const setting = require('./utils/setting')
 const config = require('./libs/config')
 
 // app.js
@@ -25,7 +24,6 @@ App({
     globalData: {
         userInfo: {},
         hasUserInfo: false,
-        setting: setting,
         config: config,
         ColorList: [{
                 title: '嫣红',

@@ -193,12 +193,13 @@ Page({
             title: '数据加载中',
         })
         wx.request({
-            url: app.globalData.config.routes.host + '/qes_banks/' + qes_lib + '/' + type + '/query_all',
+            url: app.globalData.config.routes.host + '/wx_qesbanks/' + type + '_query_all',
             header: {
                 'Accept': "*/*",
                 'content-type': 'application/json' // 默认值
             },
             data: {
+                qes_bank_id: qes_lib,
                 openid: openid
             },
             success: function (res) {

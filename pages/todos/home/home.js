@@ -1,5 +1,4 @@
 // pages/todos/process/process.js
-const config = require("../../../utils/setting")
 const init = require('../../../libs/syinit')
 const app = getApp()
 

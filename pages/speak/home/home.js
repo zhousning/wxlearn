@@ -18,14 +18,7 @@ Component({
         bindFormSubmit: function (e) {
             var that = this;
             var text = e.detail.value.textarea;
-            var openid = wx.getStorageSync('openid');
-
-            if (!openid) {
-                wx.redirectTo({
-                    url: '/pages/login/login'
-                })
-                return;
-            }
+            var openid = wx.getStorageSync('openId');
 
             if (text == null || text.trim().length < 20) {
                 wx.showToast({
@@ -38,7 +31,7 @@ Component({
                     title: '系统正在处理中...',
                 })
                 wx.request({
-                    url: app.globalData.setting.routes.host + '/advises/create_advise',
+                    url: app.globalData.config.routes.nhost + '/advises/create_advise',
                     method: 'post',
                     data: {
                         text: text,

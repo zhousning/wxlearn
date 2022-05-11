@@ -16,10 +16,10 @@ Component({
         title: '数据加载中',
       })
       var that = this;
-      var openid = wx.getStorageSync('openid');
+      var openid = wx.getStorageSync('openId');
       
       wx.request({
-        url: app.globalData.config.routes.host + '/essays/query_all',
+        url: app.globalData.config.routes.essay_all,
         header: {
           'Accept': "*/*",
           'content-type': 'application/json' // 默认值
