@@ -30,11 +30,13 @@ Component({
                 },
                 success: function (res) {
                     var obj = res.data;
+                    var content = obj.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto;display:block;margin:10px 0;"')
+                    console.log(content)
                     var article = {};
                     article['title'] = obj.title
                     article['dept'] = obj.dept == null ? '' : obj.dept
                     article['date'] = obj.article_date
-                    article['content'] = obj.content
+                    article['content'] = content 
                     that.setData({
                         article: article
                     })

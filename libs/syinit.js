@@ -36,6 +36,7 @@ var init = {
             success: function (res) {
                 var objs = res.data;
                 var iconList = [];
+                console.log(res)
                 for (var i = 0; i < objs.length; i++) {
                     iconList.push({
                         url: '/pages/todos/qes_first/qes_first?learn_ctg=' + objs[i].id,
@@ -69,7 +70,7 @@ var init = {
                 for (var i = 0; i < objs.length; i++) {
                     iconList.push({
                         url: '/pages/laws/qes_first/qes_first?law_ctg=' + objs[i].id,
-                        icon: app.globalData.IconList[i],
+                        icon: app.globalData.LawIconList[i],
                         color: app.globalData.colors[i],
                         badge: 1,
                         name: objs[i].name + '',

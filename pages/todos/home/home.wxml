@@ -54,13 +54,13 @@
 
     <view class="cu-bar bg-white solid-bottom margin-top margin-lr">
         <view class='action'>
-            <text class='cuIcon-titles text-blue '></text> 学习在线
+            <text class='cuIcon-titles text-blue '></text> 在线题库 
         </view>
     </view>
     <view class="cu-card case no-card margin-lr">
         <view class="cu-item shadow">
             <view class="cu-list grid col-{{gridCol}} ">
-                <view class="cu-item" wx:for="{{iconList}}" wx:key="index" wx:if="{{index<gridCol*2}}">
+                <view class="cu-item" wx:for="{{iconList}}" wx:key="index" >
                     <navigator hover-class='none' url="{{item.url}}">
                         <view class="cuIcon-{{item.icon}} text-{{item.color}}">
                         </view>
@@ -79,7 +79,7 @@
     <view class="cu-card case no-card margin-bottom-xl margin-lr">
         <view class="cu-item shadow">
             <view class="cu-list grid col-{{gridCol}} ">
-                <view class="cu-item" wx:for="{{lawList}}" wx:key="index" wx:if="{{index<gridCol*2}}">
+                <view class="cu-item" wx:for="{{lawList}}" wx:key="index" >
                     <navigator hover-class='none' url="{{item.url}}">
                         <view class="cuIcon-{{item.icon}} text-{{item.color}}">
                         </view>

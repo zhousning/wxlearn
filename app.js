@@ -131,15 +131,38 @@ App({
         ],
         IconList: [
             'newsfill',
-            'colorlens',
-            'font',
+            'upstage',
+            'choiceness',
             'icon',
-            'btn',
+            'creative',
             'tagfill',
             'myfill',
             'icloading',
             'copy',
-            'loading2'
+            'loading2',
+            'focus',
+            'repair',
+            'read',
+            'calendar',
+            'magic',
+            'all'
+
+        ],
+        LawIconList: [
+            'punch',
+            'write',
+            'safe',
+            'activityfill',
+            'wenzi',
+            'medal',
+            'global',
+            'fork',
+            'crown',
+            'card',
+            'circle',
+            'icloading',
+            'goodsnew',
+            'goodsfavor',
         ]
     },
     createShareMessage: function () {
