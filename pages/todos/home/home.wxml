@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-blue" isBack="{{false}}">
     <view slot="backText">返回</view>
-    <view slot="content">山东公用水务集团</view>
+    <view slot="content">山东公用控股有限公司</view>
 </cu-custom>
 
 <scroll-view scroll-y class="scrollPage">
