@@ -15,7 +15,7 @@
         <block wx:for="{{iconList}}" wx:key="*this">
             <block wx:if="{{item.ctg == 'PDF'}}">
                 <view class="cu-item arrow">
-                    <view data-url="{{item.attach}}" bindtap="openDoc" class="content margin-tb-xl">
+                    <view data-id="{{item.id}}" data-url="{{item.attach}}" bindtap="openDoc" class="content margin-tb-xl">
                         <text class="cuIcon-choiceness text-blue"></text>
                         <text class="text-black text-lg"> {{item.name}}</text>
                     </view>

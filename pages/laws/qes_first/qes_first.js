@@ -52,6 +52,7 @@ Page({
                     }
                     iconList.push({
                         url: url,
+                        id: objs[i].id,
                         ctg: objs[i].ctg,
                         attach: objs[i].attach,
                         name: objs[i].name
@@ -70,22 +71,39 @@ Page({
     },
     openDoc(e) {
         var url = app.globalData.config.routes.nhost + e.currentTarget.dataset.url;
+        var id = e.currentTarget.dataset.id;
+        var books = wx.getStorageSync('books') || {}
         wx.showLoading({
             title: '数据加载中',
         })
-        wx.downloadFile({
-            url: url,
-            success: function (res) {
-                const filePath = res.tempFilePath
-                setTimeout(function () {
-                    wx.openDocument({
-                        filePath: filePath,
-                        success: function (res) {
-                            wx.hideLoading();
-                        }
-                    })
-                }, 3000);
-            }
-        })
+        if (books[id]) {
+            var filePath = books[id]
+            setTimeout(function () {
+                wx.openDocument({
+                    filePath: filePath,
+                    success: function (res) {
+                        wx.hideLoading();
+                    }
+                })
+            }, 3000);
+        } else {
+            wx.downloadFile({
+                url: url,
+                success: function (res) {
+                    var filePath = res.tempFilePath
+                    books[id] = filePath
+                    wx.setStorageSync('books', books)
+                    setTimeout(function () {
+                        wx.openDocument({
+                            filePath: filePath,
+                            success: function (res) {
+                                wx.hideLoading();
+                            }
+                        })
+                    }, 3000);
+                }
+            })
+        }
+
     }
 })
