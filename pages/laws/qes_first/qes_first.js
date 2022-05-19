@@ -73,20 +73,15 @@ Page({
         var url = app.globalData.config.routes.nhost + e.currentTarget.dataset.url;
         var id = e.currentTarget.dataset.id;
         var books = wx.getStorageSync('books') || {}
-        wx.showLoading({
-            title: '数据加载中',
-        })
         if (books[id]) {
             var filePath = books[id]
-            setTimeout(function () {
-                wx.openDocument({
-                    filePath: filePath,
-                    success: function (res) {
-                        wx.hideLoading();
-                    }
-                })
-            }, 3000);
+            wx.openDocument({
+                filePath: filePath,
+            })
         } else {
+            wx.showLoading({
+                title: '数据加载中',
+            })
             wx.downloadFile({
                 url: url,
                 success: function (res) {

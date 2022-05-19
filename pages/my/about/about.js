@@ -26,60 +26,29 @@ Page({
                 'content-type': 'application/json' // 默认值
             },
             data: {
-                id: openid
+                openid: openid
             },
             success: function (res) {
-                wx.hideLoading();
+                var index = 0
                 var data = res.data
-                if (data.status == 'ongoing') {
-                    that.setData({
-                        ongoing: true
-                    })
-                    wx.request({
-                        url: configs.routes.fcts,
-                        method: 'get',
-                        header: {
-                            'Accept': "*/*",
-                            'content-type': 'application/json' // 默认值
-                        },
-                        data: {
-                            id: openid
-                        },
-                        success: function (res) {
-                            wx.hideLoading();
-                            if (res.data) {
-                                var array = []
-                                res.data.forEach(element => {
-                                    array.push(element)
-                                });
-                                that.setData({
-                                    picker: array
-                                })
-                            } else {
-                                wx.showToast({
-                                    title: '数据加载失败',
-                                    icon: 'none',
-                                    duration: 2000
-                                })
-                            }
-                        },
-                        fail: function () {
-                            wx.hideLoading();
-                            wx.showToast({
-                                title: '数据加载失败',
-                                icon: 'none',
-                                duration: 2000
-                            })
-                        }
-                    })
-                } else {
-                    that.setData({
-                        ongoing: false,
-                        username: data.name,
-                        phone: data.phone,
-                        fct: data.fct
-                    })
+                var name = data.name
+                var phone = data.phone
+                var fct = data.fct
+                var array = []
+                var fcts = data.fcts
+                for(var i=0; i<fcts.length; i++){
+                    if (fcts[i] == fct) {
+                        index = i
+                    }
+                    array.push(fcts[i])
                 }
+                that.setData({
+                    username: name,
+                    phone: phone,
+                    picker: array,
+                    index: index
+                })
+                wx.hideLoading();
             }
         })
     },
@@ -120,7 +89,7 @@ Page({
                 url: configs.routes.set_fct,
                 method: 'post',
                 data: {
-                    id: openid,
+                    openid: openid,
                     name: that.data.username,
                     phone: that.data.phone,
                     fct: that.data.picker[that.data.index]

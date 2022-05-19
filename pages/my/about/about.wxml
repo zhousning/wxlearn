@@ -3,17 +3,17 @@
   <view slot="content">个人资料</view>
 </cu-custom>
 <view class='margin-xl bg-white padding-xl radius shadow-lg'>
-<block wx:if="{{ongoing}}">
+<!-- <block wx:if="{{ongoing}}"> -->
   <form>
     <view class="margin-lr">
       <view class="cu-form-group margin-top">
         <view class="title">姓名</view>
-        <input placeholder="姓名" name="username" bindinput="usernameInput" />
+        <input placeholder="姓名" name="username" bindinput="usernameInput" value="{{username}}" />
       </view>
 
       <view class="cu-form-group">
         <view class="title">手机号</view>
-        <input placeholder="手机号" name="phone" type="phone" bindinput="phoneInput" />
+        <input placeholder="手机号" name="phone" type="phone" bindinput="phoneInput" value = "{{phone}}"/>
       </view>
       <view class="cu-form-group ">
         <view class="title">公司</view>
@@ -28,8 +28,8 @@
       </view>
     </view>
   </form>
-</block>
-<block wx:else>
+<!-- </block> -->
+<!-- <block wx:else>
     <view class="margin-lr">
       <view class="cu-form-group margin-top">
         <view class="title">姓名: {{username}}</view>
@@ -43,5 +43,5 @@
         <view class="title">公司: {{fct}}</view>
       </view>
     </view>
-</block>
+</block> -->
 </view>
