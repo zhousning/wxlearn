@@ -1,20 +1,20 @@
 <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">个人资料</view>
+  <view slot="content">权属公司</view>
 </cu-custom>
 <view class='margin-xl bg-white padding-xl radius shadow-lg'>
 <!-- <block wx:if="{{ongoing}}"> -->
   <form>
     <view class="margin-lr">
       <view class="cu-form-group margin-top">
-        <view class="title">姓名</view>
-        <input placeholder="姓名" name="username" bindinput="usernameInput" value="{{username}}" />
+        <view class="title">名称</view>
+        <input placeholder="名称" name="username" bindinput="usernameInput" value="{{username}}" />
       </view>
 
-      <view class="cu-form-group">
+<!--       <view class="cu-form-group">
         <view class="title">手机号</view>
         <input placeholder="手机号" name="phone" type="phone" bindinput="phoneInput" value = "{{phone}}"/>
-      </view>
+      </view> -->
       <view class="cu-form-group ">
         <view class="title">公司</view>
         <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">

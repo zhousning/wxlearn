@@ -77,7 +77,7 @@ Page({
         var openid = wx.getStorageSync('openId')
         if (this.data.username.length == 0 || this.data.phone.length == 0) {
             wx.showToast({
-                title: '姓名或电话不能为空',
+                title: '名称不能为空',
                 icon: 'none',
                 duration: 2000
             })
