@@ -14,7 +14,7 @@
     </view>
 
     <view class="padding flex justify-center">
-        <image style="width:100%;" mode="widthFix" src="cloud://cloud1-6gqvn1deb6d48dd5.636c-cloud1-6gqvn1deb6d48dd5-1309064836/微信图片_20220518114727.jpg" >
+        <image style="width:100%;" mode="widthFix" src="/images/gykgwx.jpg" >
        </image>
     </view>
 

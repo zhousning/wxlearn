@@ -18,11 +18,11 @@
     </view>
 
     <view class="padding flex justify-center">
-        <image style="width:100%;" mode="widthFix" src="https://636c-cloud1-6gqvn1deb6d48dd5-1309064836.tcb.qcloud.la/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220121153510.jpg?sign=9f83274bc93fc6987f087d8e0423b168&t=1642750585" >
+        <image style="width:100%;" mode="widthFix" src="/images/gykgwx.jpg" >
        </image>
     </view>
 
     <view class='cu-tabbar-height padding bg-gray  text-center'>
-        <text >水务惠民生 情系千万家</text>
+        <text >厚德为公 惠泽民生</text>
     </view>
 </scroll-view>
