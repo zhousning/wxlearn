@@ -221,7 +221,7 @@ Page({
         var text = e.detail.value.textarea;
         var questions = this.data.questions;
         var current = this.data.current;
-        var openid = wx.getStorageSync('openid');
+        var openid = wx.getStorageSync('openId');
 
         if (text == null || text.trim().length < 20) {
             wx.showToast({
